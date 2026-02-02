@@ -1,0 +1,13 @@
+{
+  "name": "projeto-front-root",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix projeto-front",
+    "build": "npm run build --prefix projeto-front",
+    "preview": "npm run preview --prefix projeto-front"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1"
+  }
+}
