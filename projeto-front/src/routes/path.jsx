@@ -4,15 +4,18 @@ import Produtos from "../components/produtos"
 import Categorias from "../components/categorias"
 import Pedidos from "../components/pedidos"
 import Error from "../error/error404"
+import Home from "../components/home"
 const Path = () =>{
     return(
         <Routes>
-            <Route path="/" element={<Layout/>}/>
-            <Route path="/teste" element={<Layout><p>pagina filtrada aqui</p></Layout>}/>
-            <Route path="/produtos" element={<Produtos/>} />
-            <Route path="/categorias" element={<Categorias/>} />
-            <Route path="/pedidos" element={<Pedidos/>} />
-            <Route path="*" element={<Error/>}/>
+            <Route element={<Layout/>}>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/produtos" element={<Produtos/>}/>
+                <Route path="/teste" element={<p>pagina filtrada aqui</p>}/>
+                <Route path="/categorias" element={<Categorias/>} />
+                <Route path="/pedidos" element={<Pedidos/>} />
+                <Route path="*" element={<Error/>}/>
+            </Route>
         </Routes>
     )
 }

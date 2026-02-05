@@ -1,11 +1,12 @@
 import Header from "./header"
 import Footer from "./footer"
-const Layout = ({children}) =>{
+import {Outlet} from "react-router-dom"
+const Layout = () =>{
     return(
         <div>
             <Header/>
             <main>
-                {children}
+                <Outlet/>
             </main>
             <Footer/>
         </div>

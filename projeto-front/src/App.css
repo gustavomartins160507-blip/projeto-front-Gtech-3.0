@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Tilt+Neon&family=Tilt+Warp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Tilt+Neon&family=Tilt+Warp&display=swap');
 body{
   margin: 0;
 }
 header{
   display: flex;
   flex-direction: column;
-  padding: 10px 20px 0 20px;
-  gap: 15px;
+  padding: 0 20px 0 20px;
+  gap: 6px;
+  margin-bottom: 50px;
+  box-shadow: 1px 1px 6px 1px;
 }
 .header-top-row{
   display: flex;
@@ -29,13 +32,14 @@ header{
 }
 #pesquisar{
   margin-top: 0px;
-  padding: 12px 20px;
+  padding: 8px 16px;
   font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 30px;
   width: 100%;
   min-width: 300px;
   max-width: 500px;
+  margin-bottom: 0px;
 }
 #pesquisar-div{
   margin-top: 0px;
@@ -61,45 +65,50 @@ a button{
   cursor: pointer;
   border: none;
   border-radius: 5px;
-  background-color: #007bff;
-  color: #474747;
+  background-color: #DFFE22;
+  color: #6900CC;
   transition: background-color 0.5s ease;
+  font-family: 'Tilt Warp';
 }
 a button:hover{
-  background-color: #0056b3;
+  background-color:#6900CC;
+  color: #DFFE22;
 }
 #navegation{
   display: flex;
   gap: 30px;
-  margin-bottom: 100px;
-  border-style: solid;
+  border-bottom: solid 2px;
   border-color: black;
-  width: 100%;
-  padding: 20px;
+  padding: 12px 20px;
   width: 500px;
-  border-radius: 10px 10px 0px 0px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1500px;
+  background-color: white;
+  padding-left: 200px;
+  padding-right: 200px;
 }
 #navegation a{
   text-decoration: none;
   color: #333;
   margin: auto;
-  font-family: 'Lato';
+  font-family: 'Tilt Warp';
   transition: .1s ease;
 }
 #produtos:hover{
-  color: #007bff;
+  color: #6900CC;
   border-bottom: solid 2px;
 }
 #categorias:hover{
-  color: #007bff;
+  color: #6900CC;
   border-bottom: solid 2px;
 }
 #pedidos:hover{
-  color: #007bff;
+  color: #6900CC;
   border-bottom: solid 2px;
 }
 footer{
-  margin-top: 560px;
+  margin-top: 350px;
   background-color: #1F1F1F;
   padding: 30px 40px;
   color: white;
@@ -210,4 +219,93 @@ footer{
 }
 .footer-col>a{
   text-decoration: none;
+}
+#h1-produtos{
+  text-align: center;
+}
+#section-button{
+  border-style: none;
+  background-color: white;
+}
+#title-section{
+  text-align: center;
+  font-family: 'Bebas Neue';
+}
+.section-content{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.section-content .div-card{
+  flex: 0 0 calc((100% - 60px) / 4);
+  min-width: 200px;
+  box-sizing: border-box;
+}
+
+.section-content .div-card .div-card-imagem{
+  width: 100%;
+  height: 321px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.div-card-imagem{
+  width: 292px;
+  height: 321px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.div-card-imagem .tenis-imagem{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  display: flex;
+}
+.div-card > h2{
+  font-size: 16px;
+}
+.div-card>del{
+  color: #5B5E60;
+}
+.desconto{
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+}
+.div-card{
+  background-color: whitesmoke;
+  padding: 10px;
+  border-style: solid;
+  border-color: rgba(62, 62, 62, 0.68);
+  border-radius: 5px;
+}
+.div-card{
+  transition: transform 0.3s ease;
+}
+.div-card:hover{
+  transform: scale(1.05);
+}
+header{
+  background-color: #8200FF;
+}
+.section_link{
+  text-decoration: none;
+  font-family: 'Tilt Warp';
+  color: #6900CC;
+  border-bottom: solid;
+}
+.section_link:hover{
+  border-color: #ddff00;
+}
+.div-card > h2 >a{
+  text-decoration: none;
+  font-family: 'Tilt Warp';
+  color: black;
+}
+.div-card > h2 >a:hover{
+  text-decoration: underline 2px;
 }
