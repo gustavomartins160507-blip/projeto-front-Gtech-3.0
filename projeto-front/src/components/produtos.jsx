@@ -1,10 +1,18 @@
 import "../app.css"
-const Produtos = () =>{
-    return(
+import Gallery from "./galerry"
+import { useSearchParams } from "react-router-dom"
+const Produtos = () => {
+        const [SearchParams] = useSearchParams()
+        const filter = SearchParams.get("filter")
+    return (
         <>
-        <h1 id="h1-produtos">
-            aba produtos
-        </h1>
+        {
+                filter ? (
+                        <Gallery nome={filter}/>
+                ):(
+                        <Gallery/>
+                )
+        }
         </>
     )
 }

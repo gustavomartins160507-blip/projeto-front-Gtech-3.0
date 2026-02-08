@@ -309,3 +309,25 @@ header{
 .div-card > h2 >a:hover{
   text-decoration: underline 2px;
 }
+.off{
+  background-color: #E1FF65;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+.span{
+  font-size: 10px;
+}
+.galery-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.galery >img{
+  width: 1000px;
+  height: 600px;
+}
+#imagem-selecionada-filtro{
+  font-family: 'Tilt Warp';
+}
