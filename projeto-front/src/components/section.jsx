@@ -11,7 +11,7 @@ const Section= ({children,title,link,titlealighn='left'}) =>{
                 <h3 id="title-section">{title}</h3>
                 {link && (
                     <div style={{ width: '100%', textAlign: 'center', marginBottom:'40px',}}>
-                        <button onClick={()=> navigate("/produtos?filter=nike")} id="section-button">
+                        <button onClick={()=> navigate("/produtos")} id="section-button">
                             <Link to={link.href} className="section_link">
                                 {link.text}
                             </Link>
