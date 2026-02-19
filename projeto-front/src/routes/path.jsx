@@ -5,6 +5,7 @@ import Categorias from "../components/categorias"
 import Pedidos from "../components/pedidos"
 import Error from "../error/error404"
 import Home from "../components/home"
+import Viewpage from "../components/viewpage"
 const Path = () =>{
     return(
         <Routes>
@@ -14,6 +15,7 @@ const Path = () =>{
                 <Route path="/teste" element={<p>pagina filtrada aqui</p>}/>
                 <Route path="/categorias" element={<Categorias/>} />
                 <Route path="/pedidos" element={<Pedidos/>} />
+                <Route path="/produtos/:id" element={<Viewpage/>}/>
                 <Route path="*" element={<Error/>}/>
             </Route>
         </Routes>

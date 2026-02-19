@@ -498,3 +498,37 @@ footer{
   flex-wrap: wrap;
   gap: 20px;
 }
+.galery-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  text-decoration: none;
+}
+
+.galery {
+  display: flex;
+  flex-direction: column;
+}
+
+.props-container {
+  width:700px;
+}
+.ul-container{
+  text-decoration: none;
+  list-style-type: none;
+  font-family: 'Tilt Warp';
+  font-size: 20px;
+}
+#Button-comprar{
+  background-color: #8200FF;
+  color: #ddff00;
+  transition: .2s;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#Button-comprar:hover{
+  background-color: #ddff00;
+  color: #8200FF;
+}
