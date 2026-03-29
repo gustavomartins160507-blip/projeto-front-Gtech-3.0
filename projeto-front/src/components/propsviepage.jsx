@@ -1,5 +1,6 @@
 import "../app.css"
 import { useParams } from "react-router-dom"
+import AddToCartButton from "./AddToCartButton"
 const Propspage = () =>{
     const {id} = useParams()
     const listaviewpage =[{
@@ -51,19 +52,16 @@ const Propspage = () =>{
         price:420,
         discount:329.9,
         off: "21%"
-    },
-    {   id:8,
-        image:"src/imagens/tenis8.jpeg",
-        price:310,
-        discount:249.9,
-        off: "19%",
+    },{   
+        id:8,
         name: 'SupeRep GO Nike',
-        src: 'src/imagens/tenis9.jpeg',
+        image: "src/imagens/tenis9.jpeg",
         price: 780,
-        off: 25,
-        discount: 585
-      },
-      {id:9,
+        discount: 585,
+        off: "25%"
+    },
+      {
+        id:9,
         name: 'nike air force preto',
         src: 'src/imagens/tenis10.jpeg',
         price: 650,
@@ -103,21 +101,31 @@ const Propspage = () =>{
     if(!produto){
         return <h2>Produto nao encontrado</h2>
     }
-    return(
-        <ul className="ul-container">
-            <li> 
-                Produto: {produto.name}
-            </li>
-            <li>
-                <del>{produto.price} R$</del>
-            </li>
-            <li>
-                {produto.discount}R$
-            </li>
-            <li>
-                <button id="Button-comprar">Comprar</button>
-            </li>
-        </ul>
+    const img = produto.image || produto.src
+    return (
+        <div className="product-props-card">
+            <ul className="ul-container product-props-list">
+                <li className="product-props-title">{produto.name}</li>
+                <li>
+                    <del className="product-props-old">R$ {produto.price}</del>
+                </li>
+                <li className="product-props-pix">R$ {produto.discount} no pix</li>
+            </ul>
+            <div className="product-props-actions">
+                <AddToCartButton
+                    product={{
+                        id: produto.id,
+                        name: produto.name,
+                        image: img,
+                        price: produto.price,
+                        discount: produto.discount,
+                    }}
+                />
+                <button type="button" id="Button-comprar">
+                    Comprar agora
+                </button>
+            </div>
+        </div>
     )
 }
 export default Propspage

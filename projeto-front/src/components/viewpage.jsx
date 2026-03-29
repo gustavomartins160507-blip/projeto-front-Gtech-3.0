@@ -1,8 +1,9 @@
-import { useParams, Link } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
-import Card2 from "./produtoscard2"
 import "../app.css"
 import Propspage from "./propsviepage"
+import AddToCartButton from "./AddToCartButton"
+import { PRODUTO_POR_ID } from "../constants/produtosCart"
 const Viewpage = ({props}) => {
     const { id } = useParams()
     const imagens= [
@@ -35,8 +36,10 @@ const Viewpage = ({props}) => {
     }
 
     if (!imagem_selecionada) {
-        return <h2>Produto não encontrado</h2>
+        return <h2 className="viewpage-empty">Produto não encontrado</h2>
     }
+
+    const meta = PRODUTO_POR_ID[Number(id)]
 
     return (
         <div className="galery-container">
@@ -46,7 +49,9 @@ const Viewpage = ({props}) => {
                 </h2>
 
                 <div className="slider">
-                    <button onClick={previmage}>◀</button>
+                    <button type="button" onClick={previmage} aria-label="Imagem anterior">
+                        ◀
+                    </button>
 
                     <img
                         src={imagem_selecionada.image[index]}
@@ -54,10 +59,11 @@ const Viewpage = ({props}) => {
                         className="galery"
                     />
 
-                    <button onClick={nextimage}>▶</button>
+                    <button type="button" onClick={nextimage} aria-label="Próxima imagem">
+                        ▶
+                    </button>
                 </div>
-
-                <div className="miniaturas-container">
+                <div className="miniaturas-container viewpage-thumbs">
                     {imagem_selecionada.image.map((img, idx) => (
                         <img
                             key={idx}
@@ -67,8 +73,27 @@ const Viewpage = ({props}) => {
                             onClick={() => setindex(idx)}
                         />
                     ))}
+                </div>
+                <div className="viewpage-bottom">
+                    {meta && (
+                        <div className="product-detail-panel">
+                            <p className="product-detail-name">{meta.name}</p>
+                            <p className="product-detail-old">
+                                <del>R$ {meta.price}</del>
+                            </p>
+                            <p className="product-detail-pix">
+                                R$ {meta.discount} <span>no pix</span>
+                            </p>
+                            <AddToCartButton
+                                product={{
+                                    id: Number(id),
+                                    ...meta,
+                                }}
+                            />
+                        </div>
+                    )}
                     <div className="props-container">
-                        <Propspage name='teste'/>
+                        <Propspage />
                     </div>
                 </div>
             </div>

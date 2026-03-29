@@ -2,7 +2,9 @@ import "../app.css"
 import { useState, useEffect } from "react"
 import Card from "./produtoscard"
 import Card2 from "./produtoscard2"
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
+import AddToCartButton from "./AddToCartButton"
+import { PRODUTO_POR_ID } from "../constants/produtosCart"
 const Gallery = ({ nome ,radius}) => {
     const imagens = [
         {  id:1, filtro: "sapato social masculino", image: ["src/imagens/tenis1.jpeg" , "src/imagens/tenis1.1.webp","src/imagens/tenis1.2.jpeg","src/imagens/tenis1.3.webp","src/imagens/tenis1.4.jpg","src/imagens/tenis 1.5.webp"]},
@@ -23,9 +25,9 @@ const Gallery = ({ nome ,radius}) => {
         setindex((prev) =>
             prev === imagem_selecionada.image.length -1 ? 0 : prev +1 )
     }
-    const previmage = (prev) =>{
+    const previmage = () => {
         setindex((prev) =>
-            prev === 0 ? imagem_selecionada.image.length -1 :prev -1
+            prev === 0 ? imagem_selecionada.image.length - 1 : prev - 1
         )
     }
     return (
@@ -58,8 +60,35 @@ const Gallery = ({ nome ,radius}) => {
                       style={{ borderRadius: radius }}
                     />
                   ))}
-                  <Link to={`/produtos/${imagem_selecionada.id}`}>
-                  Mostrar produto
+                </div>
+                <div className="product-detail-panel gallery-actions">
+                  {PRODUTO_POR_ID[imagem_selecionada.id] && (
+                    <div className="product-detail-prices">
+                      <p className="product-detail-name">
+                        {PRODUTO_POR_ID[imagem_selecionada.id].name}
+                      </p>
+                      <p className="product-detail-old">
+                        <del>
+                          R$ {PRODUTO_POR_ID[imagem_selecionada.id].price}
+                        </del>
+                      </p>
+                      <p className="product-detail-pix">
+                        R$ {PRODUTO_POR_ID[imagem_selecionada.id].discount}{" "}
+                        <span>no pix</span>
+                      </p>
+                      <AddToCartButton
+                        product={{
+                          id: imagem_selecionada.id,
+                          ...PRODUTO_POR_ID[imagem_selecionada.id],
+                        }}
+                      />
+                    </div>
+                  )}
+                  <Link
+                    to={`/produtos/${imagem_selecionada.id}`}
+                    className="mostrar-produto"
+                  >
+                    Ver página do produto
                   </Link>
                 </div>
                 <h2 id="Sugestões">Sugestões para você</h2>

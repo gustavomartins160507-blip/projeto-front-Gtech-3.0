@@ -6,6 +6,16 @@ html{
 body{
   margin: 0;
 }
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
 header{
   display: flex;
   flex-direction: column;
@@ -129,7 +139,6 @@ a button:hover{
   border-bottom: solid 2px;
 }
 footer{
-  margin-top: 350px;
   background-color: #1F1F1F;
   padding: 30px 40px;
   color: white;
@@ -417,9 +426,6 @@ header{
   min-width: 200px;
   margin-top: 200px;
 }
-footer{
-  margin-top: 1200px;
-}
 #Sugestões{
     margin-top: 100px;
     width: 100%;
@@ -531,4 +537,390 @@ footer{
 #Button-comprar:hover{
   background-color: #ddff00;
   color: #8200FF;
+  padding: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.mostrar-produto{
+  text-decoration: none;
+  color: #ddff00;
+  background-color: #8200FF;
+  font-size: 16px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 45px;
+  font-family: 'Tilt warp';
+  transition: .2s ;
+}
+.mostrar-produto:hover{
+    background-color: #ddff00;
+    color: #8200FF;
+    padding: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+/* —— Loja: layout listagem —— */
+.produtos-layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  box-sizing: border-box;
+}
+
+.produtos-sidebar {
+  flex: 0 0 220px;
+}
+
+.produtos-sidebar .order-box {
+  background: linear-gradient(145deg, #fafafa 0%, #f0f0f0 100%);
+  border: 1px solid rgba(105, 0, 204, 0.12);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.produtos-sidebar .order-box h3 {
+  margin: 0 0 0.75rem;
+  font-family: "Tilt Warp", sans-serif;
+  font-size: 1rem;
+  color: #333;
+}
+
+.produtos-sidebar .order-box select {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: "Source Sans 3", sans-serif;
+  background: #fff;
+  cursor: pointer;
+}
+
+.produtos-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.produtos-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.02em;
+  color: #6900cc;
+  margin: 0 0 1.25rem;
+  text-align: left;
+}
+
+.produtos-grid {
+  width: 100%;
+}
+
+.produto-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: flex-start;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  border-radius: 12px;
+  border: 1px solid rgba(105, 0, 204, 0.15);
+  background: linear-gradient(180deg, #ffffff 0%, #f7f7f8 100%);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  padding: 12px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 12px 28px rgba(105, 0, 204, 0.12);
+}
+
+.btn-add-cart {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding: 0.65rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Tilt Warp", sans-serif;
+  font-size: 0.85rem;
+  background: linear-gradient(135deg, #6900cc 0%, #8200ff 100%);
+  color: #dffe22;
+  transition: transform 0.15s ease, filter 0.2s ease, background 0.2s ease;
+}
+
+.btn-add-cart:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.btn-add-cart:active {
+  transform: translateY(0);
+}
+
+.btn-add-cart .bi {
+  font-size: 1.1rem;
+}
+
+/* Painel preço + ações (galeria filtrada / detalhe) */
+.product-detail-panel {
+  text-align: left;
+  background: linear-gradient(145deg, #fafafa 0%, #f3f0f7 100%);
+  border: 1px solid rgba(105, 0, 204, 0.12);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  max-width: 420px;
+}
+
+.gallery-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery-actions .mostrar-produto {
+  margin-top: 0;
+  align-self: center;
+  border-radius: 8px;
+}
+
+.product-detail-name {
+  font-family: "Tilt Warp", sans-serif;
+  font-size: 1.1rem;
+  color: #222;
+  margin: 0 0 0.5rem;
+}
+
+.product-detail-old {
+  margin: 0;
+  color: #6b6b6b;
+  font-size: 0.95rem;
+}
+
+.product-detail-pix {
+  margin: 0.35rem 0 1rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.product-detail-pix span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6900cc;
+}
+
+.viewpage-wrap {
+  padding: 2rem 1rem 4rem;
+}
+
+.viewpage-galery {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+}
+
+.viewpage-thumbs {
+  margin-top: 1.25rem;
+}
+
+.viewpage-thumbs .imagem-fotos {
+  margin-top: 0;
+}
+
+.viewpage-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.viewpage-bottom .props-container {
+  flex: 1;
+  min-width: 280px;
+  max-width: 480px;
+}
+
+.viewpage-empty {
+  text-align: center;
+  padding: 3rem;
+  font-family: "Tilt Warp", sans-serif;
+  color: #6900cc;
+}
+
+/* Ficha na página de detalhe (Propspage) */
+.product-props-card {
+  background: linear-gradient(145deg, #fafafa 0%, #f3f0f7 100%);
+  border: 1px solid rgba(105, 0, 204, 0.12);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.product-props-list {
+  margin: 0;
+  padding: 0;
+}
+
+.product-props-title {
+  font-size: 1.25rem !important;
+  color: #222 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.product-props-old {
+  color: #6b6b6b;
+}
+
+.product-props-pix {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.product-props-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.product-props-actions .btn-add-cart {
+  margin-top: 0;
+}
+
+.product-props-actions #Button-comprar {
+  width: 100%;
+  border-radius: 8px;
+  border: 2px solid #6900cc;
+  background: transparent;
+  color: #6900cc;
+  font-family: "Tilt Warp", sans-serif;
+  cursor: pointer;
+  padding: 0.65rem 1rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.product-props-actions #Button-comprar:hover {
+  background: #6900cc;
+  color: #dffe22;
+}
+.simple-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 3rem;
+}
+
+.simple-page-title {
+  font-family: "Bebas Neue", sans-serif;
+  color: #6900cc;
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+.simple-page-subtitle {
+  color: #555;
+  margin-bottom: 1.25rem;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.9rem;
+}
+
+.category-card {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  background: #f6f3fb;
+  border: 1px solid rgba(105, 0, 204, 0.2);
+  color: #6900cc;
+  padding: 1rem;
+  border-radius: 10px;
+  font-family: "Tilt Warp", sans-serif;
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.order-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid rgba(105, 0, 204, 0.2);
+  border-radius: 10px;
+  padding: 0.75rem;
+  background: #fff;
+}
+
+.order-card h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1rem;
+}
+
+.order-card p {
+  margin: 0.15rem 0;
+}
+
+.order-image {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.orders-total {
+  margin-top: 1rem;
+  font-family: "Tilt Warp", sans-serif;
+  color: #222;
+}
+
+#button-icone {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-badge {
+  position: absolute;
+  right: -8px;
+  top: -8px;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #dffe22;
+  color: #6900cc;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  font-weight: bold;
 }

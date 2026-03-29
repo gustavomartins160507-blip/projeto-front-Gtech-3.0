@@ -1,4 +1,5 @@
 import Section from "./section"
+import Footer from "./footer"
 function Home(){
     return(
         <>
@@ -6,6 +7,7 @@ function Home(){
             text:'Mostrar mais',
             href:'/produtos'
         }}/>
+        <Footer />
         </>
     )
 }
