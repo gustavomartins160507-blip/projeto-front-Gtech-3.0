@@ -15,6 +15,13 @@ const Viewpage = ({props}) => {
         { id:6,filtro: "sapatenis masculino", image: ["/src/imagens/tenis6.jpeg","/src/imagens/tenis6.1.avif","/src/imagens/tenis6.2.jpg"] },
         { id:7,filtro: "converse all star", image: ["/src/imagens/tenis7.jpeg","/src/imagens/tenis7.1.jpg","/src/imagens/tenis7.2.jpg","/src/imagens/tenis7.3.webp"] },
         { id:8, filtro: "nike air max", image: ["/src/imagens/tenis8.jpeg","/src/imagens/tenis8.1.jpg","/src/imagens/tenis8.2.webp","/src/imagens/tenis8.3.webp"] },
+        { id:9, filtro: "SupeRep GO Nike", image: ["/src/imagens/tenis9.jpeg"] },
+        { id:10, filtro: "Nike air force preto", image: ["/src/imagens/tenis10.jpeg"]},
+        { id:11, filtro: "Karhu sneaker", image:["/src/imagens/tenis11.jpeg"]},
+        { id:12, filtro: "Nike Air jordan vermelho", image:["/src/imagens/tenis12.jpeg"]},
+        { id:13, filtro: "Nike air force preto", image:["/src/imagens/tenis13.jpeg"]},
+        { id:14, filtro: "Nike air force preto", image:["/src/imagens/tenis14.jpeg"]},
+        
     ]
     const imagem_selecionada = imagens.find(
         img => img.id === Number(id)

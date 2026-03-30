@@ -21,9 +21,7 @@ const Card2 = ({ order }) => {
             <img src={item.src} alt="" className="tenis-imagem" />
           </div>
           <h2>
-            <Link to={`/produtos?filter=${encodeURIComponent(item.name)}`}>
-              {item.name}
-            </Link>
+            <Link to={`/produtos/${9 + i}`}>{item.name}</Link>
           </h2>
           <p>
             <del>R$ {item.price}</del>
@@ -35,7 +33,7 @@ const Card2 = ({ order }) => {
           <p className="off"> -{item.off}% OFF</p>
           <AddToCartButton
             product={{
-              id: `extra-${item.name}-${i}`,
+              id: 9 + i,
               name: item.name,
               image: item.src,
               price: item.price,

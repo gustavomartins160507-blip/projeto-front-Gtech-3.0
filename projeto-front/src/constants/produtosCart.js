@@ -8,8 +8,11 @@ export const ID_POR_FILTRO = {
   "sapatenis masculino": 6,
   "converse all star": 7,
   "nike air max": 8,
+  "superep go nike": 9,
+  "nike air force preto": 10,
+  "karhu sneaker": 11,
+  "nike air jordan vermelho": 12,
 }
-
 export const PRODUTO_POR_ID = {
   1: {
     name: "Sapato social masculino",
@@ -58,5 +61,41 @@ export const PRODUTO_POR_ID = {
     image: "src/imagens/tenis8.jpeg",
     price: 310,
     discount: 249.9,
+  },
+  9: {
+    name: "SupeRep GO Nike",
+    image: "src/imagens/tenis9.jpeg",
+    price: 780,
+    discount: 585,
+  },
+  10: {
+    name: "Nike air force preto",
+    image: "src/imagens/tenis10.jpeg",
+    price: 650,
+    discount: 455,
+  },
+  11: {
+    name: "Karhu sneaker",
+    image: "src/imagens/tenis11.jpeg",
+    price: 899,
+    discount: 764,
+  },
+  12: {
+    name: "Nike Air jordan vermelho",
+    image: "src/imagens/tenis12.jpeg",
+    price: 720,
+    discount: 432,
+  },
+  13: {
+    name: "Nike air force preto",
+    image: "src/imagens/tenis13.jpeg",
+    price: 540,
+    discount: 432,
+  },
+  14: {
+    name: "Nike air force preto",
+    image: "src/imagens/tenis14.jpeg",
+    price: 810,
+    discount: 526,
   },
 }
